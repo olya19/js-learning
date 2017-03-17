@@ -1,0 +1,32 @@
+
+img {
+  width: 100%;
+}
+
+
+
+.wrap {
+
+}
+
+header {
+
+}
+
+header a img {
+  height: 100px;
+  width: auto;
+}
+
+aside {
+  width: 200px;
+  float: left;
+}
+
+.content {
+  margin-left: 200px;
+}
+
+.footer {
+  clear: both;
+}
