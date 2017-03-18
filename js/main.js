@@ -9,6 +9,6 @@ window.onload = function() {
 
   setTimeout(function() {
     console.info('title change');
-    title.style.backgroundColor = '#blue';
+    title.style.backgroundColor = 'blue';
   }, 2000);
 }
