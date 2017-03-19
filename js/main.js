@@ -1,3 +1,4 @@
+
 /**
  * Created by Olga on 17.03.2017.
  */
@@ -9,6 +10,7 @@ window.onload = function () {
     console.info(title.innerHTML);
     setInterval( function () {
         console.info('title change');
+
         if(title.style.backgroundColor == 'blue'){
             title.style.backgroundColor = 'red';
         } else{
@@ -17,3 +19,8 @@ window.onload = function () {
 
         }, 1000);
 };
+
+        title.style.backgroundColor = 'blue';
+        }, 2000);
+};
+
