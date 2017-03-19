@@ -1,0 +1,41 @@
+
+img {
+  width: 100%;
+}
+
+
+
+.wrap {
+  width: 600px;
+  margin: 0 auto;
+  padding: 10px;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.5);
+  display: block;
+  background: #eee;
+}
+
+header {
+
+}
+
+header a img {
+  height: 100px;
+  width: auto;
+}
+
+aside {
+  width: 200px;
+  float: left;
+}
+
+.content {
+  margin-left: 200px;
+}
+
+.content h1 {
+  background-color: #f00;
+}
+
+.footer {
+  clear: both;
+}
