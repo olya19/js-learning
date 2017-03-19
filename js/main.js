@@ -8,9 +8,19 @@ window.onload = function () {
     console.info(title.innerHTML);
     title.innerHTML = 'Hello';
     console.info(title.innerHTML);
-
-    setTimeout( function () {
+    setInterval( function () {
         console.info('title change');
+
+        if(title.style.backgroundColor == 'blue'){
+            title.style.backgroundColor = 'red';
+        } else{
+            title.style.backgroundColor = 'blue';
+        }
+
+        }, 1000);
+};
+
         title.style.backgroundColor = 'blue';
         }, 2000);
 };
+
