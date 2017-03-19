@@ -9,24 +9,43 @@ img{
     width: 1000px;
 }
 
-.header{
-
-}
 
 header a img{
     height:100px;
     width: auto;
 }
 
+.flex-container{
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+
+}
+
+
 aside {
-    width:200px;
-    float: left;
+
+    width: 20%;
+    background-color: antiquewhite;
+    margin-right: 20px;
 }
 
+ul li{
+    text-align: center;
+    padding: 10px 0 0;
+}
+
+ul li:last-child{
+    padding-bottom: 10px;
+}
 .content{
-    margin-left: 200px;
+    width: 80%;
+    flex-grow: 1;
 }
 
-.footer{
 
+footer{
+    background-color: beige;
+    padding: 20px 0;
+    margin-top: 10px;
 }
