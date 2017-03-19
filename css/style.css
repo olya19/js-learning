@@ -33,6 +33,7 @@ aside {
 ul li{
     text-align: center;
     padding: 10px 0 0;
+    color: brown;
 }
 
 ul li:last-child{
