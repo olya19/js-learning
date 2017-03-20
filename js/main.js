@@ -4,15 +4,15 @@
 
 window.onload = function () {
     var title = document.getElementById('page').querySelector('h1');
-    console.info(title.innerHTML);
-    title.innerHTML = 'Hello';
-    console.info(title.innerHTML);
+    var isBlue = false;
     setInterval( function () {
         console.info('title change');
-        if(title.style.backgroundColor == 'blue'){
+        if(isBlue){
             title.style.backgroundColor = 'red';
+            isBlue = false;
         } else{
             title.style.backgroundColor = 'blue';
+            isBlue = true;
         }
 
         }, 1000);
