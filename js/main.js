@@ -1,3 +1,4 @@
+
 /**
  * Created by Olga on 17.03.2017.
  */
@@ -17,3 +18,4 @@ window.onload = function () {
 
         }, 1000);
 };
+
