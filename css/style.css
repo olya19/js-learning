@@ -15,19 +15,8 @@ header a img{
     width: auto;
 }
 
-.flex-container{
-    display: flex;
-    align-items: flex-start;
-    width: 100%;
-
-}
-
-
 aside {
-
-    width: 20%;
     background-color: antiquewhite;
-    margin-right: 20px;
 }
 
 ul li{
@@ -39,11 +28,6 @@ ul li{
 ul li:last-child{
     padding-bottom: 10px;
 }
-.content{
-    width: 80%;
-    flex-grow: 1;
-}
-
 
 footer{
     background-color: beige;
