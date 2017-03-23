@@ -1,21 +1,40 @@
+function Data() {
+    this.createData = function(key, data){
+        data = data || prompt('Input data:');
+        localStorage.setItem(key, data);
+    };
 
-/**
- * Created by Olga on 17.03.2017.
- */
+    this.readData = function(key){
+        return localStorage.getItem(key);
+    };
 
-window.onload = function () {
-    var title = document.getElementById('page').querySelector('h1');
-    var isBlue = false;
-    setInterval( function () {
-        console.info('title change');
-        if(isBlue){
-            title.style.backgroundColor = 'red';
-            isBlue = false;
-        } else{
-            title.style.backgroundColor = 'blue';
-            isBlue = true;
-        }
+    this.updateData = function(key, newData){
 
-        }, 1000);
-};
+    };
 
+    this.deleteData = function (key) {
+
+    };
+
+}
+
+function Murkup() {
+
+    this.createMarkup = function(tag, content){
+        var element = document.createElement(tag);
+        element.innerHTML = content;
+        document.body.appendChild(element);
+    }
+
+}
+
+var data = new Data();
+var markup = new Murkup();
+
+data.createData('a');
+
+var a = data.readData('a');
+
+console.info(a);
+
+markup.createMarkup('h1', a);
