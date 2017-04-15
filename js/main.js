@@ -1,11 +1,27 @@
 function Data() {
-
+    var logs = new Logs();
     this.createData = function (key, data) {
+        key = key || prompt('Input key');
         data = data || prompt('Input data:');
+
+
+        if (typeof key === 'undefined'){
+            logs.e('Create data failed: no key');
+            return false;
+        } else if (typeof data === 'undefined'){
+            logs.e('Create data failed: no data');
+            return false;
+        }
+
         localStorage.setItem(key, data);
     };
 
     this.readData = function (key) {
+        if (typeof key === 'undefined'){
+            logs.e('Read data failed: no key');
+            return false;
+        }
+
         return localStorage.getItem(key);
     };
 
@@ -22,7 +38,7 @@ function Data() {
 function Murkup() {
     var logs = new Logs();
     this.createMarkup = function (tag, content) {
-        if (tag !== undefined) {
+        if (typeof tag !== 'undefined') {
             var element = document.createElement(tag);
             element.innerHTML = content;
             document.body.appendChild(element);
@@ -38,7 +54,7 @@ function Murkup() {
 
     this.deleteMarkupByTagName = function (tag, position) {
 
-        if (tag !== undefined && position !== undefined) {
+        if (typeof tag !== 'undefined' && typeof position !== 'undefined') {
             var elements = document.getElementsByTagName(tag);
             if (elements.length !== 0 && position > 0 && position <= elements.length){
                 elements.item(position - 1).remove();
@@ -54,7 +70,7 @@ function Murkup() {
     };
 
     this.deleteMarkupByIdName = function (id) {
-        if (id !== undefined){
+        if (typeof id !== 'undefined'){
 
             if ( !!document.getElementById(id) ){
                 document.getElementById(id).remove();
