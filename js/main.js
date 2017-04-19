@@ -35,22 +35,8 @@ function Data() {
 
 }
 
-function Murkup() {
+function Markup() {
     var logs = new Logs();
-    this.createMarkup = function (tag, content) {
-        if (typeof tag !== 'undefined') {
-            var element = document.createElement(tag);
-            element.innerHTML = content;
-            document.body.appendChild(element);
-
-            logs.i('Success: added new tag \'' + tag + '\'.');
-
-        } else {
-
-            logs.e('Tag addition failed: tag name does not specify.');
-
-        }
-    };
 
     this.deleteMarkupByTagName = function (tag, position) {
 
@@ -89,44 +75,99 @@ function Murkup() {
 
 }
 
+Markup.prototype.createMarkup = function(options){
+    //tag
+    //content
+    //parent
+    //styleClass
+    //id
+    //callback
 
-function Logs() {
-
-    this.l = function (message) {
-        console.log(message);
+    var optionsDefault = {
+        tag: 'div',
+        content: '',
+        parent: 'body',
+        styleClass: '',
+        id: '',
+        callback: null
     };
+    options = options || {};
 
-    this.i = function (message) {
-        console.info(message);
-    };
+    for (var i in optionsDefault){
+        if (options.hasOwnProperty(i)) {
+            optionsDefault[i] = options[i];
+        }
+    }
 
-    this.w = function (message) {
-        console.warn(message);
-    };
+    var element  = document.createElement(optionsDefault.tag);
+    element.innerHTML = optionsDefault.content;
+    element.className = optionsDefault.className;
+    element.id = optionsDefault.id;
+    element.parent = optionsDefault.parent;
+    console.info('add');
+};
 
-    this.e = function (message) {
-        console.error(message);
-    };
+function Events(){
 
-    this.ts = function (timerName) {
-        console.time(timerName);
-    };
-
-    this.te = function (timerName) {
-        console.time(timerName);
-    };
 }
 
+Events.prototype.createEvent = function(){
+
+};
+
+Events.prototype.updateEvent = function(){
+
+};
+
+Events.prototype.deleteEvent = function(){
+
+};
+
+
+
+
 var data = new Data();
-var markup = new Murkup();
+var markup = new Markup();
+var events = new Events();
 
-data.createData('a', 'value');
+markup.createMarkup({
+    tag: 'form',
+    parent: 'body',
+    id: '#todo_add'
+});
 
-var a = data.readData('a');
+markup.createMarkup({
+    tag: 'input',
+    parent: '#form',
+    id: 'todo_text'
+});
 
-console.info(a);
+markup.createMarkup({
+    tag: 'button',
+    parent: '#form',
+    id: 'todo_submit',
+    content: 'Add todo'
+});
 
-data.updateData('a', 'new value');
-markup.createMarkup('h1', a);
-markup.deleteMarkupByTagName('div', 1);
-markup.deleteMarkupByIdName('pasge');
+document.getElementById('todo_submit').addEventListener('click', function(event){
+
+    var todoText = todoText = document.getElementById('todo_text').value;
+    var id = getId();
+    markup.createMarkup({
+        tag: 'div',
+        parent: '#todo_items',
+        id: id,
+        content: todoText
+    });
+
+    markup.createMarkup({
+        tag: 'input#checkbox',
+        parent: id
+    });
+
+    markup.createMarkup({
+        tag: 'span',
+        parent: id
+    });
+
+});
