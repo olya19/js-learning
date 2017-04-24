@@ -1,0 +1,16 @@
+<!--<script src="js/main.js"></script>-->
+<div id="div">
+    <a href="a">Click A</a>
+    <a href="b" target="_blank">Click B</a>
+</div>
+<script>
+    var div = document.getElementById('div');
+    var a = document.querySelectorAll('a');
+    for (var i = 0; i < a.length; i++) {
+        a[i].addEventListener('click', function (event) {
+            event.preventDefault();
+            console.log(event.target.href);
+        });
+    }
+    console.log(a);
+</script>
