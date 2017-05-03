@@ -8,7 +8,11 @@
     {
       title: 'jQuery',
       url: 'apps/jquery/index.html'
-    }
+    },
+     {
+         title: 'ES-6',
+         url: 'apps/es-6/index.html'
+     }
   ];
 
   function App(event) {

@@ -47,14 +47,18 @@ function AddTodo() {
       { type: 'submit' }
     ],
     content: 'Add',
+    id: 'add-button',
     className: 'btn btn-primary',
     parent: buttonGroup
   });
 
   events.on(form, 'submit', function(event) {
+
+    console.log(form.lastChild.lastChild.lastChild.lastChild);
     event.preventDefault();
     self.add(form, addField);
   });
+
 }
 
 AddTodo.prototype.add = function(form, addField) {

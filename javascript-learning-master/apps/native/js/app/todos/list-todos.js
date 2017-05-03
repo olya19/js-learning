@@ -76,6 +76,16 @@ ListTodos.prototype.getList = function() {
       parent: todoCellActionsEl
     });
 
+      var todoActionEditEl = markup.create({
+          tag: 'button',
+          attrs: [
+              { type: 'button' }
+          ],
+          className: 'btn btn-info btn-xs',
+          content: '<span class="glyphicon glyphicon-pencil"></span>',
+          parent: todoCellActionsEl
+      });
+
     events.on(todoCellCheckboxEl, 'click', function(event) {
       event.preventDefault();
       self.doCheck(todoEl, todoCheckboxEl, todoCellTextEl, todos, todo, index);
@@ -89,6 +99,19 @@ ListTodos.prototype.getList = function() {
     events.on(todoActionDeleteEl, 'click', function(event) {
       self.delete(index, todos);
     });
+
+      events.on(todoActionEditEl, 'click', function(event) {
+          var elements = document.getElementsByClassName('form-control');
+          elements[0].value = todo.text;
+          elements[0].focus();
+
+          // var newTodoItem = prompt('');
+          // console.log(newTodoItem, todo);
+          // todo.text = newTodoItem;
+          // todos[index] = todo;
+          // data.update('todos', JSON.stringify(todos));
+          // events.send('get-todos-list');
+      });
   });
 };
 

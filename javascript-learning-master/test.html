@@ -1,16 +1,15 @@
-<!--<script src="js/main.js"></script>-->
+<script src="test2.js"></script>
 <div id="div">
     <a href="a">Click A</a>
     <a href="b" target="_blank">Click B</a>
 </div>
 <script>
-    var div = document.getElementById('div');
-    var a = document.querySelectorAll('a');
-    for (var i = 0; i < a.length; i++) {
-        a[i].addEventListener('click', function (event) {
-            event.preventDefault();
-            console.log(event.target.href);
-        });
+class B extends A{
+    C(){
+        console.log(this.a);
     }
-    console.log(a);
+}
+
+const aaa = new B(100);
+aaa.C();
 </script>
